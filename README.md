@@ -8,4 +8,3 @@ The course is intensive and aims to introduce students to the development of ser
 - Building apps with Express and Handlebars
 - Creating an MVC architecture
 #
-test
