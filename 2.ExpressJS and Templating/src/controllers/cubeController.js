@@ -1,12 +1,14 @@
+//Imports
 const router = require('express').Router();
 const cubeService = require('../services/cubeService.js')
 
+//Create Page [GET,POST]
 router.get('/create', (req,res)=>{
     res.render('create');
 });
 
 router.post('/create', (req,res)=>{
-    const {name, description, imageUrl, difficultyLevel} = req.body;
+    const {name, description, imageUrl, difficultyLevel} = req.body; //that's where bodyparser is needed
 
     cubeService.create({
         name,
@@ -17,6 +19,7 @@ router.post('/create', (req,res)=>{
     res.redirect('/');
 });
 
+//Details Page
 router.get('/details/:cubeId', (req,res)=>{
     const {cubeId} = req.params;
     const cube = cubeService.getSingleCube(cubeId);
@@ -28,4 +31,5 @@ router.get('/details/:cubeId', (req,res)=>{
     res.render('details', {...cube})
 })
 
+//Export router because it gives an error if not exported and must be used in router.js
 module.exports = router;
