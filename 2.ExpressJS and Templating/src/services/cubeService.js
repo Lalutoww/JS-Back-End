@@ -1,22 +1,19 @@
 //Imports
-const uniqid = require('uniqid');
+const Cube = require('../models/cube.js')
 
 const cubes = [];
 
 //Named exports
 
-//Create
-exports.create = (cubeDataObj) => {
-   const newCube = {
-      id: uniqid(),
-      ...cubeDataObj,
-   };
-   cubes.push(newCube);
-   return newCube; //Good practice to return anything you create
-};
+exports.create = async (cubeData) =>{
+   const cube = await Cube.create(cubeData);
+   return cube;
+}
+
 //Get All - with implemented search function
-exports.getAll = (search, from, to) => {
-   let filteredCubes = [...cubes];
+exports.getAll = async(search, from, to) => {
+   let filteredCubes = await Cube.find().lean();
+   //lean() transforms mongoose Document class into JS object
 
    if (search) {
       filteredCubes = filteredCubes.filter((x) =>
@@ -37,7 +34,4 @@ exports.getAll = (search, from, to) => {
 };
 
 //Get single cube by id
-exports.getSingleCube = (id) => {
-   const cube = cubes.find((x) => x.id === id);
-   return cube;
-};
+exports.getSingleCube = async (id) => await Cube.findById(id).lean();
