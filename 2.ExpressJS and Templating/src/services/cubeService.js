@@ -35,3 +35,10 @@ exports.getAll = async(search, from, to) => {
 
 //Get single cube by id
 exports.getSingleCube = async (id) => await Cube.findById(id).lean();
+
+//Attach accessory to cube
+exports.attachAccessory = async(cubeId, accessoryId) =>{
+   const cube = await Cube.findById(cubeId); // Lean doesn't work for some reason so this is just a temporary workaround
+   cube.accessories.push(accessoryId); // we have the id from the req body and just push it into the array
+   return cube.save();
+}

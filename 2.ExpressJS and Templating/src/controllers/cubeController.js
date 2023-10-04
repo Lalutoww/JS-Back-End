@@ -34,12 +34,20 @@ router.get('/details/:cubeId', async (req, res) => {
 
 router.get('/:cubeId/attach-accessory', async (req, res) => {
    const { cubeId } = req.params;
-   const cube = await cubeService.getSingleCube(cubeId);
+   const cube = await cubeService.getSingleCube(cubeId)
    const accessories = await accessoryService.getAll();
    const hasAccessories = accessories.length > 0;
 
    res.render('accessory/attach', { cube, accessories, hasAccessories });
 });
 
+router.post('/:cubeId/attach-accessory', async (req, res) => {
+   const { cubeId } = req.params;
+   const { accessory: accessoryId } = req.body;
+
+   await cubeService.attachAccessory(cubeId, accessoryId);
+
+   res.redirect(`/cubes/details/${cubeId}`);
+});
 //Export router because it gives an error if not exported and must be used in router.js
 module.exports = router;
