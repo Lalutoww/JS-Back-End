@@ -7,3 +7,8 @@ exports.create = (accessoryData)=>{
 }
 
 exports.getAll = ()=> Accessory.find().lean();
+
+exports.getWithoutOwned = (accessoryIds) => {
+    // $nin => NOT IN
+    return Accessory.find({ _id: { $nin: accessoryIds } });
+};

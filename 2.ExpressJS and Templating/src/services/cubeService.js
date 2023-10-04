@@ -34,7 +34,8 @@ exports.getAll = async(search, from, to) => {
 };
 
 //Get single cube by id
-exports.getSingleCube = async (id) => await Cube.findById(id).lean();
+exports.getSingleCube = async (id) => await Cube.findById(id).lean().populate('accessories');
+//populate() replaces _id with the new 'parent' path id
 
 //Attach accessory to cube
 exports.attachAccessory = async(cubeId, accessoryId) =>{
