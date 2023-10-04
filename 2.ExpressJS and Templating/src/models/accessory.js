@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 
+//Accessory Schema
 const accessorySchema = mongoose.Schema({
     name: String,
     description: String,
