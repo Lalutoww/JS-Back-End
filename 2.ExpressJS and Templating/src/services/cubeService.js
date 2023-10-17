@@ -1,7 +1,5 @@
 //Imports
-const Cube = require('../models/cube.js')
-
-const cubes = [];
+const Cube = require('../models/Cube.js')
 
 //Named exports
 
@@ -43,3 +41,7 @@ exports.attachAccessory = async(cubeId, accessoryId) =>{
    cube.accessories.push(accessoryId); // we have the id from the req body and just push it into the array
    return cube.save();
 }
+
+exports.update = (cubeId, cubeData) => Cube.findByIdAndUpdate(cubeId,cubeData);
+
+exports.delete = (cubeId) => Cube.findByIdAndDelete(cubeId);

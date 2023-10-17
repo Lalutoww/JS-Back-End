@@ -1,5 +1,5 @@
 //Imports
-const Accessory = require('../models/accessory.js');
+const Accessory = require('../models/Accessory.js');
 
 //Create accessory
 exports.create = (accessoryData)=>{
