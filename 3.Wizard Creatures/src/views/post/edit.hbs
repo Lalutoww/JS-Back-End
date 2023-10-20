@@ -5,7 +5,7 @@
             <h2>"I've Always Wanted To Use That Spell."</h2>
          </div>
 
-         <form action="#" method="" class="editForm">
+         <form method="POST" class="editForm">
             <h2>Edit Post</h2>
             <ul class="noBullet">
                <li>
@@ -14,8 +14,8 @@
                      type="text"
                      class="inputFields"
                      id="name"
-                     name=""
-                     value=""
+                     name="name"
+                     value="{{creature.name}}"
                   />
                </li>
                <li>
@@ -24,8 +24,8 @@
                      type="text"
                      class="inputFields"
                      id="species"
-                     name=""
-                     value=""
+                     name="species"
+                     value="{{creature.species}}"
                   />
                </li>
                <li>
@@ -34,8 +34,8 @@
                      type="text"
                      class="inputFields"
                      id="skin"
-                     name=""
-                     value=""
+                     name="skinColor"
+                     value="{{creature.skinColor}}"
                   />
                </li>
                <li>
@@ -44,8 +44,8 @@
                      type="text"
                      class="inputFields"
                      id="eye"
-                     name=""
-                     value=""
+                     name="eyeColor"
+                     value="{{creature.eyeColor}}"
                   />
                </li>
                <li>
@@ -54,8 +54,8 @@
                      type="text"
                      class="inputFields"
                      id="image"
-                     name=""
-                     value=""
+                     name="image"
+                     value="{{creature.image}}"
                   />
                </li>
                <li>
@@ -63,8 +63,8 @@
                   <textarea
                      id="description"
                      class="inputFields"
-                     name=""
-                  ></textarea>
+                     name="description"
+                  >{{creature.description}}</textarea>
                </li>
                <li id="center-btn">
                   <button id="edit-btn">Edit</button>
