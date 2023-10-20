@@ -4,7 +4,7 @@ const { extractErrorMessages } = require('../utils/errorHandler.js');
 const { isAuth } = require('../middlewares/authMiddleware.js');
 
 router.get('/register', (req, res) => {
-   res.render('user/register');
+   res.render('user/register', { title: 'Register Page' });
 });
 
 router.post('/register', async (req, res) => {
@@ -22,7 +22,7 @@ router.post('/register', async (req, res) => {
 });
 
 router.get('/login', (req, res) => {
-   res.render('user/login');
+   res.render('user/login', { title: 'Login Page' });
 });
 
 router.post('/login', async (req, res) => {

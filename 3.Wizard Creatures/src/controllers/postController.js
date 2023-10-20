@@ -5,11 +5,11 @@ const { isAuth } = require('../middlewares/authMiddleware.js');
 
 router.get('/all', async (req, res) => {
    const creatures = await creatureService.getAll().lean();
-   res.render('post/all-posts', { creatures });
+   res.render('post/all-posts', { creatures, title: 'Catalog Page' });
 });
 
 router.get('/create', isAuth, (req, res) => {
-   res.render('post/create');
+   res.render('post/create', { title: 'Create Page' });
 });
 
 router.post('/create', async (req, res) => {
@@ -44,13 +44,19 @@ router.get('/details/:creatureId', async (req, res) => {
    );
    const voterEmails = creature.votes.map((v) => v.email).join(', ');
 
-   res.render('post/details', { creature, isOwner, hasVoted, voterEmails });
+   res.render('post/details', {
+      creature,
+      isOwner,
+      hasVoted,
+      voterEmails,
+      title: 'Details Page',
+   });
 });
 
 router.get('/edit/:creatureId', isAuth, async (req, res) => {
    const { creatureId } = req.params;
    const creature = await creatureService.getSingleCreature(creatureId).lean();
-   res.render('post/edit', { creature });
+   res.render('post/edit', { creature, title: 'Edit Page' });
 });
 
 router.post('/edit/:creatureId', async (req, res) => {
@@ -84,7 +90,7 @@ router.get('/profile', isAuth, async (req, res) => {
    const { user } = req;
    const myCreatures = await creatureService.getMyCreatures(user?._id).lean();
 
-   res.render('post/my-posts', { myCreatures });
+   res.render('post/my-posts', { myCreatures, title: 'My Posts' });
 });
 
 router.get('/vote/:creatureId', async (req, res) => {
