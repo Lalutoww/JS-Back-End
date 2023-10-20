@@ -2,8 +2,16 @@ const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
 
 const userSchema = mongoose.Schema({
-   firstName: { type: String, required: [true, 'First Name is required'] },
-   lastName: { type: String, required: [true, 'Last Name is required'] },
+   firstName: {
+      type: String,
+      required: [true, 'First Name is required'],
+      minLength: [3, 'First name must be atleast 3 characters']
+   },
+   lastName: {
+      type: String,
+      required: [true, 'Last Name is required'],
+      minLength: [3, 'Last name must be atleast 3 characters']
+   },
    email: {
       type: String,
       required: [true, 'Email is required'],
@@ -18,10 +26,15 @@ const userSchema = mongoose.Schema({
             }
             return true;
          },
-         message: msg => 'The specified email address is already in use.',
-      }
+         message: () => 'The specified email address is already in use.',
+      },
+      minLength: [10, 'Email must be atleast 10 characters']
    },
-   password: { type: String, required: [true, 'Password is required'] },
+   password: {
+      type: String,
+      required: [true, 'Password is required'],
+      minLength: [4, 'Password must be atleast 4 characters']
+   },
 });
 
 userSchema.pre('save', async function () {

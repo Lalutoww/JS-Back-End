@@ -75,11 +75,11 @@
     - redirect to the details page for the crrent creature
     - show the email of the people voted
     - if user already has voted -> "Thanks for Voting" and add the email of the vote people -->
-23. Routes Guards - check
-24. Validations
+<!-- 23. Routes Guards - check -->
+<!-- 24. Validations
     - Login
     - Register
-    - Animas
+    - Animas -->
 <!-- 25. Bonus
    -  Profile -> Show my posts
    -  If no posts - show message
