@@ -70,17 +70,17 @@
     - on success redirect to all posts page
 21. Edit Creature
     - on success redirect to all posts page -->
-22. Vote button
+<!-- 22. Vote button
     - when clicked -> voted
     - redirect to the details page for the crrent creature
     - show the email of the people voted
-    - if user already has voted -> "Thanks for Voting" and add the email of the vote people
+    - if user already has voted -> "Thanks for Voting" and add the email of the vote people -->
 23. Routes Guards - check
 24. Validations
     - Login
     - Register
     - Animas
-25. Bonus
-
--  Profile -> Show my posts
--  If no posts - show message
+<!-- 25. Bonus
+   -  Profile -> Show my posts
+   -  If no posts - show message
+   - edit vote count -->
