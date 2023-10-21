@@ -52,35 +52,37 @@
 
 <!-- SECOND PART -->
 
-<!-- 15. Provide endponts to navigation in both states (app.get to all links) -->
-<!-- 16. Add Creature model to mongoose -->
+15. Provide endponts to navigation in both states (app.get to all links) -->
+16. Add Creature model to mongoose
 
-<!-- 17. Add Creature
-   - DON'T FORGET TO ADD OWNER
-   - on success redirect to all posts page -->
+17. Add Creature
 
-<!-- 18. Implement All Posts Page
+-  DON'T FORGET TO ADD OWNER
+-  on success redirect to all posts page
+
+18. Implement All Posts Page
     - show each creature with image, name, etc.
-    - If no creatures 'There are no posts yet' -->
-<!-- 19. Add details page (for Creatures)
+    - If no creatures 'There are no posts yet'
+19. Add details page (for Creatures)
     - if the user is the owner of the post shoud have "Edit" and "Delete" buttons
     - If the user hasn't logged it -> no buttons
-    - If the user is not the owner -> vote button -->
-<!-- 20. Delete Creature
+    - If the user is not the owner -> vote button
+20. Delete Creature
     - on success redirect to all posts page
 21. Edit Creature
-    - on success redirect to all posts page -->
-<!-- 22. Vote button
+    - on success redirect to all posts page
+22. Vote button
     - when clicked -> voted
     - redirect to the details page for the crrent creature
     - show the email of the people voted
-    - if user already has voted -> "Thanks for Voting" and add the email of the vote people -->
-<!-- 23. Routes Guards - check -->
-<!-- 24. Validations
+    - if user already has voted -> "Thanks for Voting" and add the email of the vote people
+23. Routes Guards - check
+24. Validations
     - Login
     - Register
-    - Animas -->
-<!-- 25. Bonus
-   -  Profile -> Show my posts
-   -  If no posts - show message
-   - edit vote count -->
+    - Animas
+25. Bonus
+
+-  Profile -> Show my posts
+-  If no posts - show message
+-  edit vote count
